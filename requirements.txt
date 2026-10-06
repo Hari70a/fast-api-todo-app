@@ -1,0 +1,13 @@
+pydantic
+fastapi
+sqlalchemy
+starlette
+uvicorn
+passlib
+bcrypt==4.0.1
+python-multipart==0.0.20
+python-jose
+psycopg2-binary
+pytest
+httpx
+pytest-asyncio
