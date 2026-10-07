@@ -1,5 +1,7 @@
 
 from os import getenv
+from dotenv import load_dotenv
+from pathlib import Path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
@@ -8,6 +10,7 @@ from sqlalchemy.engine.url import URL
 # SQLALCHEMY_DATABASE_URL = 'sqlite:///./todoApp.db'
 # The below one is not working due to the special character '@' in the password.
 # SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:Admin@123@localhost/TodoApplicationDatabases'
+load_dotenv(Path(__file__).resolve().parent / ".env")
 SQLALCHEMY_DATABASE_URL = URL.create(
     drivername=getenv("PG_DRIVER_NAME"),
     username=getenv("PG_USER"),
